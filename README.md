@@ -46,3 +46,22 @@ docker tag helm-fastapi simonangelfong/helm-fastapi-hello-world
 
 docker push simonangelfong/helm-fastapi-hello-world
 ```
+
+---
+
+## Create Helm Chart
+
+```sh
+helm create helm
+# Creating helm
+
+vi helm/values.yaml
+# update
+# image.repository = simonangelfong/helm-fastapi-hello-world
+# service.type = NodePort
+# service.port = 8080
+
+vi helm/template/deployment.yaml
+# remove all probe
+
+```
