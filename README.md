@@ -81,6 +81,33 @@ git commit -m "add helm"
 ## Deploy with Helm Chart
 
 ```sh
-helm repo add helm-fastapi https://github.com/simonangel-fong/Helm_FastAPI
+helm repo add helm-fastapi https://simonangel-fong.github.io/Helm_FastAPI/
+# "helm-fastapi" has been added to your repositories
 helm repo update
+# Hang tight while we grab the latest from your chart repositories...
+# ...Successfully got an update from the "helm-fastapi" chart repository
+# Update Complete. ⎈Happy Helming!⎈
+
+helm search repo helm-fastapi
+# NAME                    CHART VERSION   APP VERSION     DESCRIPTION
+# helm-fastapi/helm       0.1.0                           A Helm chart for Kubernetes
+
+helm install my-api helm-fastapi/helm
+# NAME: my-api
+# LAST DEPLOYED: Sun Jan 18 17:01:29 2026
+# NAMESPACE: default
+# STATUS: deployed
+# REVISION: 1
+# NOTES:
+# 1. Get the application URL by running these commands:
+#   export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services my-api-helm)
+#   export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+#   echo http://$NODE_IP:$NODE_PORT
+
+export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services my-api-helm)
+export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+
+# confirm
+curl http://$NODE_IP:$NODE_PORT
+# {"message":"Hello World"}
 ```
