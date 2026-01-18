@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  helm:
+  - apiVersion: v2
+    created: "2026-01-18T16:11:41.20763-05:00"
+    description: A Helm chart for Kubernetes
+    digest: fabc161b1051bdccf9cc4ef1c87df3a430890fbfb05fd5a967d344a7899b9a7a
+    name: helm
+    type: application
+    urls:
+    - https://github.com/simonangel-fong/Helm_FastAPI/helm-0.1.0.tgz
+    version: 0.1.0
+generated: "2026-01-18T16:11:41.2055979-05:00"

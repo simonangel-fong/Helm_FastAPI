@@ -64,4 +64,22 @@ vi helm/values.yaml
 vi helm/template/deployment.yaml
 # remove all probe
 
+# pack helm chart
+helm package helm-chart
+
+helm repo index . --url https://github.com/simonangel-fong/Helm_FastAPI/
+
+
+# push to github repo
+git add .
+git commit -m "add helm"
+
+```
+
+---
+
+## Deploy with Helm Chart
+
+```sh
+helm repo index . --url https://github.com/simonangel-fong/Helm_FastAPI/
 ```
