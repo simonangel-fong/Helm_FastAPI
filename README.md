@@ -67,7 +67,7 @@ vi helm/template/deployment.yaml
 # pack helm chart
 helm package helm-chart
 
-helm repo index . --url https://github.com/simonangel-fong/Helm_FastAPI/
+helm repo index .
 
 
 # push to github repo
@@ -81,5 +81,6 @@ git commit -m "add helm"
 ## Deploy with Helm Chart
 
 ```sh
-helm repo index . --url https://github.com/simonangel-fong/Helm_FastAPI/
+helm repo add helm-fastapi https://github.com/simonangel-fong/Helm_FastAPI
+helm repo update
 ```
